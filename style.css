@@ -1,0 +1,250 @@
+/* --------------------- */
+/* Variables */
+/* --------------------- */
+
+:root {
+    --main-accent: #fc575e;
+    --light-accent: #f0f1f5;
+    --dark-accent-color: #333;
+    --main-grey: #555;
+}
+
+/* --------------------- */
+/* Resets */
+/* --------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+/* --------------------- */
+/* Global */
+/* --------------------- */
+
+body{
+    background: var(--light-accent);
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header{
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--main-grey);
+}
+
+.hidden{
+    display: none;
+}
+
+.btn-sm{
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.full-screen-opaque{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+
+/* --------------------- */
+/* NavBar */
+/* --------------------- */
+
+.nav-header{
+    cursor: pointer;
+    transition: all 0.40s;
+}
+
+.nav-header:hover{
+    color: var(--main-accent);
+    letter-spacing: 10px;
+    transform: scale(1.05);
+}
+
+#nav{
+    height: 60px;
+    background-color: var(--dark-accent-color);
+    margin-bottom: 25px;
+    
+}
+
+#navContainer{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #f0f1f5;
+}
+
+#addBtn{
+    font-size: 30px;
+    transition: transform 0.3s;
+}
+
+#addBtn:hover{
+    transform: scale(1.3);
+}
+
+/* --------------------- */
+/* Panel */
+/* --------------------- */
+
+.panel{
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px var(--main-grey);
+    padding: 40px 20px 20px 20px;
+    margin: 10px;
+}
+
+#addLinkContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addLinkContainer.hidden{
+    display: none;
+}
+
+#addLinkPanel{
+    animation: slide-down 1s 0s ease-in;
+}
+
+/* --------------------- */
+/* Form */
+/* --------------------- */
+
+.form-control{
+    width: 100%;
+    margin: 8px 0;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid var(--main-grey);
+    padding: 5px 15px;
+    font-size: 14px;
+    color: var(--main-grey);
+}
+
+input[type='submit'], button{
+    padding: 8px 22px;
+    border-radius: 5px;
+    border: 1px solid var(--main-accent);
+    background-color: var(--main-accent);
+    color: var(--light-accent);
+    font-size: 16px;
+    transition: all 0.45s;
+}
+
+input[type='submit']:hover, button:hover{
+    cursor: pointer;
+    color: var(--main-accent);
+    background: white;
+}
+
+#addedCategories{
+    margin-bottom: 13px;
+    margin-top: 4px;
+}
+
+
+/* --------------------- */
+/* Link */
+/* --------------------- */
+
+
+.link{
+    position: relative;
+}
+
+.link-options{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.link-date{
+    font-size: 16px;
+    font-style: italic;
+    padding-block: 6px;
+}
+
+.category{
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid var(--main-accent);
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    margin: 0 4px;
+    background-color: var(--main-accent);
+}
+
+#linksList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-item{
+    flex-basis: 100%;
+}
+
+
+/* --------------------- */
+/* Animations */
+/* --------------------- */
+
+@keyframes slide-down{
+    0%{
+        transform: translateY(-1000px);
+    }
+    90%{
+        transform: translateY(25px);
+    }
+    95%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+
+
+/* --------------------- */
+/* Media Queries */
+/* --------------------- */
+
+@media only screen and (min-width: 786px){
+    .flex-item{
+        flex-basis: 50%;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    .flex-item{
+        flex-basis: 33%;
+    }
+}
